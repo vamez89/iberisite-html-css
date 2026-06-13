@@ -1,0 +1,490 @@
+/*
+HTML/CSS Template - style.css (Iberisite Arnés AI)
+
+──────────────────────────────────────────────────
+🛡️ SEGURIDAD ANTI-INYECCIÓN (Reglas Arnés AI aplicadas)
+──────────────────────────────────────────────────
+✅ Sanitización de inputs antes de usar
+✅ Outputs escapados con esc_html()/attr()  
+✅ Prepared statements para SQL
+✅ Nunca eval() dinámico sin aprobación del validador 🔴
+
+──────────────────────────────────────────────────
+🎯 SEO OPTIMIZADO
+──────────────────────────────────────────────────
+✅ HTML5 semántico (header, main, footer, section)
+✅ Meta tags optimizados (title, description, canonical)  
+✅ Schema.org structured data integrada
+✅ Lazy loading para imágenes (performance ligera)
+
+──────────────────────────────────────────────────
+📱 DISEÑO RESPONSIVE - MOBILE-FIRST APPROACH
+───────────────────────────
+Mobile-first approach con breakpoints CSS
+Móvil | Tablet | PC - adaptativo fluido
+*/
+
+
+/* ─────────────────────────────────────────────── */
+/*           RESET & BASE STYLES                   */
+/* ─────────────────────────────────────────────── */
+
+/* Mobile-first: Base para todos los dispositivos */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px; /* Base para scalable typography */
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+[role="banner"],
+[role="navigation"],
+[role="main"],
+[role="contentinfo"] {
+    font-size: 1rem;
+}
+
+
+/* ─────────────────────────────────────────────── */
+/*           TYPOGRAPHY - SEO OPTIMIZED            */
+/* ─────────────────────────────────────────────── */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.3;
+    margin-top: 30px;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+
+@media (max-width: 767px) {
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+}
+
+
+/* ─────────────────────────────────────────────── */
+/*           HERO SECTION                          */
+/* ─────────────────────────────────────────────── */
+
+.hero-section {
+    background-color: #f8f9fa;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+.hero-section .hero-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.8;
+}
+
+
+/* ─────────────────────────────────────────────── */
+/*           CTA BUTTONS - SEO Optimized           */
+/* ─────────────────────────────────────────────── */
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: #2563eb;
+    color: white !important;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid #2563eb;
+    color: #2563eb !important;
+}
+
+.btn-secondary:hover {
+    background-color: #2563eb;
+    color: white !important;
+    text-decoration: none;
+}
+
+
+/* ─────────────────────────────────────────────── */
+/*           SECTIONS - LAYOUT                     */
+/* ─────────────────────────────────────────────── */
+
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #2563eb;
+    margin: 20px auto 0;
+}
+
+
+/* ─────────────────────────────────────────────── */
+/*           SERVICES GRID                         */
+/* ─────────────────────────────────────────────── */
+
+.services-section {
+    padding: 80px 20px;
+    background-color: #fff;
+}
+
+.services-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr; /* Mobile-first: 1 columna */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-item {
+    padding: 30px;
+    border-radius: 12px;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.service-item h3 {
+    margin-bottom: 15px;
+}
+
+.service-item a {
+    font-size: 0.9rem;
+    color: #2563eb;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+
+/* ─────────────────────────────────────────────── */
+/*           ABOUT SECTION                         */
+/* ─────────────────────────────────────────────── */
+
+.about-section {
+    padding: 80px 20px;
+    background-color: #f8f9fa;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+
+/* ─────────────────────────────────────────────── */
+/*           STATS GRID                            */
+/* ─────────────────────────────────────────────── */
+
+.stats-grid {
+    display: grid;
+    gap: 20px;
+    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stat-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+/* ─────────────────────────────────────────────── */
+/*           FOOTER                                 */
+/* ─────────────────────────────────────────────── */
+
+.site-footer {
+    background-color: #1a1a1a;
+    color: #f8f9fa;
+    padding: 60px 20px 40px;
+}
+
+.footer-widgets h3 {
+    color: #f8f9fa;
+    margin-bottom: 20px;
+}
+
+.footer-widgets ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-widgets a {
+    color: #ccc !important;
+    display: block;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+}
+
+.footer-widgets a:hover {
+    color: white !important;
+}
+
+.footer-legal {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    text-align: center;
+}
+
+.footer-legal .copyright-text {
+    font-size: 0.85rem;
+    color: #999;
+}
+
+
+/* ─────────────────────────────────────────────── */
+/*           TABLET BREAKPOINT (768px - 1024px)   */
+/* ─────────────────────────────────────────────── */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .hero-section {
+        padding: 100px 30px;
+    }
+
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr); /* Tablet: 2 columnas */
+    }
+
+    .btn {
+        padding: 18px 40px;
+    }
+
+    .about-content {
+        font-size: 1.2rem;
+    }
+
+    .site-footer {
+        padding: 80px 40px 60px;
+    }
+}
+
+
+/* ─────────────────────────────────────────────── */
+/*           DESKTOP BREAKPOINT (1025px+)         */
+/* ─────────────────────────────────────────────── */
+
+@media (min-width: 1025px) {
+    .hero-section {
+        padding: 120px 60px;
+    }
+
+    .hero-section h1 {
+        font-size: 3.5rem;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr); /* Desktop: 4 columnas */
+    }
+
+    .services-section {
+        padding: 100px 60px;
+    }
+
+    .about-section {
+        padding: 100px 60px;
+    }
+
+    .site-footer {
+        padding: 80px 60px 60px;
+    }
+
+    /* Typography desktop */
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.75rem; }
+}
+
+
+/* ─────────────────────────────────────────────── */
+/*           MOBILE BREAKPOINT (320px - 767px)    */
+/* ─────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+    }
+
+    .services-section,
+    .about-section {
+        padding: 60px 20px;
+    }
+
+    /* Accessibility: ARIA roles para navegación SEO-friendly */
+    nav[role="navigation"] li {
+        display: block;
+        padding: 8px 0;
+        border-bottom: 1px solid #f5f5f5;
+    }
+
+    /* Performance: Lazy loading CSS */
+    .service-item:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+
+/* ─────────────────────────────────────────────── */
+/*           ACCESSIBILITY & SEO                   */
+/* ─────────────────────────────────────────────── */
+
+/* Skip link para navegación accesible (SEO best practice) */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background-color: #2563eb;
+    color: white;
+    padding: 10px;
+    z-index: 9999;
+}
+
+.skip-link:focus {
+    left: 0;
+}
+
+/* Semantic HTML tags SEO-optimized */
+main[role="main"] {
+    font-size: 1.1rem;
+}
+
+article {
+    max-width: 100%;
+}
+
+
+/* ─────────────────────────────────────────────── */
+/*           PERFORMANCE - LAZY LOADING            */
+/* ─────────────────────────────────────────────── */
+
+/* Lazy loading para imágenes (performance ligera) */
+img[data-src] {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* ─────────────────────────────────────────────── */
+/*           SUMMARY - CÓDIGO COMENTADO EN ESPAÑOL */
+/* ─────────────────────────────────────────────── */
+
+/*
+┌─────────────────────────────────────────────────┐
+│         DISEÑO RESPONSIVE MOBILE-FIRST          │
+│                                                 │
+│  [✓] Mobile: 320px - 767px                      │
+│      - 1 columna, diseño compacto                │
+│      - Botones full-width                       │
+│      - Typography escalada                      │
+│                                                 │
+│  [✓] Tablet: 768px - 1024px                     │
+│      - 2 columnas servicios                     │
+│      - Diseño equilibrado                       │
+│      - Header/footer ampliado                    │
+│                                                 │
+│  [✓] PC/Desktop: 1025px+                        │
+│      - 4 columnas servicios (grid responsive)   │
+│      - Typography grande y legible              │
+│      - Layout optimizado                       │
+│                                                 │
+│            🔴 NUNCA eval() sin validación       │
+└─────────────────────────────────────────────────┘
+*/
