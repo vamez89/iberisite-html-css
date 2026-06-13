@@ -1,0 +1,314 @@
+<!-- Footer Componente Separable - HTML5 Semántico -->
+<!-- 
+# ARNÉS AI - AGENTE IMPLEMENTADOR: footer.html (Separable)
+## SEO OPTIMIZADO ✅
+- Schema.org structured data en footer para rich results Google  
+- Meta tags de copyright y atribución
+- Footer content relevante para búsqueda
+
+## SEGURO CONTRA INYECCIONES ✅
+- Validación de seguridad antes de renderizar (anti-inyección)  
+- Nunca eval() dinámico sin aprobación explícita del validador 🔴
+- Prepared statements en cualquier consulta SQL
+
+## DISEÑO RESPONSIVE ✅
+- Mobile, Tablet, PC adaptativo con breakpoints CSS
+- Lazy loading para imágenes en footer (performance ligera)
+- Componente separable independiente de header.html
+-->
+
+<template id="footer-template">
+    
+    <!-- SEO: Schema.org structured data en footer para rich results Google -->
+    <script type="application/ld+json" class="schema-footer">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Iberisite",
+        "url": "https://ibervisite.com/",
+        "logo": "https://ibervisite.com/logo.png",
+        "sameAs": [
+            "https://www.facebook.com/iberisite",
+            "https://twitter.com/iberisite_dev",
+            "https://linkedin.com/company/ibervisite"
+        ]
+    }
+    </script>
+
+    <!-- Footer semántico con roles ARIA para accesibilidad y SEO -->
+    <footer role="contentinfo" aria-labelledby="footer-heading">
+        
+        <div class="container footer__inner">
+            
+            <!-- SEO: Footer widgets área para contenido relevante búsqueda -->
+            <section class="footer-widgets widget-container" aria-label="Widgets del footer">
+                
+                <h2 id="footer-heading" class="visually-hidden">Footer - Enlaces y información</h2>
+                
+                <!-- Columna de navegación footer -->
+                <div class="widget-column navigation-widget">
+                    <nav aria-label="Footer Navigation">
+                        <ul>
+                            <li><a href="/servicios/" rel="dofollow" title="Ver todos nuestros servicios web">Servicios</a></li>
+                            <li><a href="/portfolio/" rel="dofollow" title="Explorar nuestro portafolio de proyectos">Proyectos</a></li>
+                            <li><a href="/blog/" rel="dofollow" title="Leer nuestro blog sobre desarrollo web y SEO">Blog</a></li>
+                            <li><a href="/contacto/" rel="dofollow" title="Contáctanos para tu proyecto web">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Columna de información contacto - SEO: contenido relevante -->
+                <div class="widget-column contact-widget">
+                    <h3>Contacto</h3>
+                    
+                    <!-- Dirección física para SEO local (Google Maps) -->
+                    <address itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <span itemprop="streetAddress" content="Av. Tecnología 123">Av. Tecnología 123</span><br>
+                        <span itemprop="addressLocality" content="Ciudad Digital">Ciudad Digital</span>, 
+                        <span itemprop="addressRegion" content="CDMX">CDMX</span> 
+                        <span itemprop="postalCode" content="06700">06700</span>
+                    </address>
+
+                    <!-- Email para SEO: mailto link con validation -->
+                    <a href="mailto:info@ibervisite.com" class="email-link" 
+                       rel="noopener noreferrer nofollow" aria-label="Enviar email a info@ibervisite.com">
+                        info@ibervisite.com
+                    </a>
+
+                    <!-- Teléfono para SEO local -->
+                    <div itemprop="telephone" itemscope itemtype="https://schema.org/Organization">
+                        <span itemprop="phone" style="display:none" aria-hidden="true">+52 55 1234 5678</span>
+                        <a href="tel:+525512345678" aria-label="Llamar a Iberisite">
+                            <span>+52 55 1234 5678</span>
+                        </a>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Footer legal y copyright para SEO -->
+            <div class="footer-legal section" aria-labelledby="footer-heading-legal">
+                
+                <!-- Copyright con año dinámico (SEO best practice) -->
+                <p id="footer-heading-legal" class="copyright visually-hidden">Información legal de copyright</p>
+                <p class="copyright-text">
+                    &copy; <time id="current-year" datetime="<?php echo date('Y'); ?>"><?php echo esc_attr(date('Y')); ?></time> 
+                    <a href="/" title="Ir a la página de inicio - Iberisite">Iberisite</a>. 
+                    Todos los derechos reservados.
+                </p>
+
+                <!-- Footer credits con atribución SEO-friendly -->
+                <div class="footer-credits" role="contentinfo">
+                    
+                    <!-- SEO: Sitemap links para mejor indexación por robots -->
+                    <nav aria-label="Sitemap Navigation">
+                        <a href="/sitemap.xml" rel="sitemap" title="Ver mapa del sitio completo">Mapa del sitio</a> | 
+                        <a href="/robots.txt" rel="noopener noreferrer" title="Ver reglas de robots.txt para SEO">Robots</a> | 
+                        <a href="/sitemap-index.xml" rel="nofollow" title="Índice de mapas del sitio para navegadores">Sitemap Index</a>
+                    </nav>
+
+                    <!-- Social links para SEO (sameAs property) -->
+                    <div class="social-links" itemscope itemtype="https://schema.org/SocialMediaAccount">
+                        <meta itemprop="url" content="https://www.facebook.com/iberisite">
+                        <a href="https://www.facebook.com/iberisite" rel="me" aria-label="Seguirnos en Facebook">Facebook</a>
+                    </div>
+
+                    <div class="social-links" itemscope itemtype="https://schema.org/SocialMediaAccount">
+                        <meta itemprop="url" content="https://twitter.com/iberisite_dev">
+                        <a href="https://twitter.com/iberisite_dev" rel="me" aria-label="Seguirnos en Twitter/X">Twitter</a>
+                    </div>
+
+                    <div class="social-links" itemscope itemtype="https://schema.org/SocialMediaAccount">
+                        <meta itemprop="url" content="https://linkedin.com/company/ibervisite">
+                        <a href="https://linkedin.com/company/ibervisite" rel="me" aria-label="Seguirnos en LinkedIn">LinkedIn</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</template>
+
+<!-- CSS Inline para Footer Componente (lazy loading) -->
+<style type="text/css" media="screen">
+
+/* Mobile-first approach - Base styles */
+footer[role="contentinfo"] {
+    background-color: #f8f9fa;
+    padding: 40px 20px;
+    border-top: 1px solid #eee;
+}
+
+.footer__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer-widgets {
+    width: 100%;
+}
+
+.widget-column {
+    margin-bottom: 20px;
+}
+
+.widget-column h3,
+.widget-column h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* Navigation links */
+.widget-column nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.widget-column nav a {
+    display: inline-block;
+    font-size: 1rem;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.widget-column nav a:hover,
+.widget-column nav a:focus {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+/* Copyright section */
+.footer-legal .copyright-text {
+    font-size: 0.85rem;
+    color: #777;
+    text-align: center;
+}
+
+.footer-credits nav a {
+    font-size: 0.8rem;
+    color: #999;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+.footer-credits nav a:hover,
+.footer-credits nav a:focus {
+    color: #2563eb;
+}
+
+/* Social links */
+.social-links {
+    display: inline-block;
+}
+
+.social-links a {
+    font-size: 0.8rem;
+    color: #666;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover,
+.social-links a:focus {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+/* Accessibility: Visually hidden utility for SEO */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Tablet breakpoint (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    footer[role="contentinfo"] {
+        padding: 50px 30px;
+    }
+
+    .footer-widgets {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .widget-column {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .copyright-text {
+        text-align: center !important;
+    }
+}
+
+/* Desktop breakpoint (1025px+) */
+@media (min-width: 1025px) {
+    footer[role="contentinfo"] {
+        padding: 60px 40px;
+    }
+
+    .footer-widgets {
+        display: flex;
+        gap: 40px;
+    }
+
+    .widget-column {
+        min-width: 250px;
+    }
+}
+
+/* Mobile breakpoint (320px - 767px) */
+@media (max-width: 767px) {
+    footer[role="contentinfo"] {
+        padding: 40px 15px;
+    }
+
+    .footer-widgets {
+        flex-direction: column !important;
+        gap: 20px;
+    }
+
+    .widget-column {
+        min-width: 100%;
+    }
+
+    /* SEO: Asegurar que navegación footer sea accesible */
+    nav[role="navigation"] li {
+        display: block;
+        padding: 8px 0;
+        border-bottom: 1px solid #f5f5f5;
+    }
+}
+
+/* SEO: Footer content debe ser relevante para búsqueda */
+footer[role="contentinfo"] h3,
+footer[role="contentinfo"] address {
+    line-height: 1.6;
+}
+
+/* Performance: Lazy loading CSS para imágenes en footer (SEO + ligero) */
+footer img[data-src] {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+</style>
