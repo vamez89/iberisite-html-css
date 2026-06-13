@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Iberisite - Diseño web profesional y minimalista. Desarrollo de sitios WordPress adaptativos a móviles, tablets y PC. Código seguro contra inyecciones. Optimizado para SEO con estructura semántica HTML5.">
+    <meta name="keywords" content="diseño web, wordpress, seo, responsive, html5, css3, javascript, desarrollo web, minimalista">
+    <meta name="author" content="Iberisite Development Team">
+    <meta name="robots" content="index, follow">
+    
+    <!-- SEO: Canonical URL para prevenir contenido duplicado -->
+    <link rel="canonical" href="https://ibervisite.com/">
+    
+    <!-- Open Graph meta tags para redes sociales (SEO social) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Iberisite - Diseño Web Profesional">
+    <meta property="og:description" content="Desarrollo de sitios web profesionales, minimalistas y orientados al SEO. Expertos en WordPress y diseño responsive.">
+    <meta property="og:url" content="https://ibervisite.com/">
+    <meta property="og:image" content="https://ibervisite.com/logo-og.png">
+    
+    <!-- Twitter Card meta tags (SEO social media) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Iberisite - Diseño Web Profesional">
+    <meta name="twitter:description" content="Desarrollo de sitios web profesionales, minimalistas y orientados al SEO. Expertos en WordPress y diseño responsive.">
+    <meta name="twitter:image" content="https://ibervisite.com/logo-twitter.png">
+    
+    <!-- Favicon (SEO: mejora experiencia móvil) -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <!-- Preload critical resources para performance ligera (lazy loading) -->
+    <link rel="preload" href="/fonts/roboto-regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Schema.org structured data para SEO rich results (Google Business, Organization) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Iberisite",
+        "url": "https://ibervisite.com/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://ibervisite.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <!-- SEO: Preconnect para fuentes Google Fonts (mejora carga) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <title>Iberisite - Diseño Web Profesional | Desarrollo WordPress & SEO</title>
+    
+    <!-- Link a style.css separado (componente reutilizable) -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- Lazy loading para scripts no críticos (performance optimizada) -->
+    <script async src="/js/analytics-lazy.js"></script>
+</head>
+
+<body class="home minimal responsive">
+    
+    <!-- HEADER SEMÁNTICO HTML5 (Componente reutilizable) -->
+    <header id="masthead" role="banner">
+        <div class="container site-header__inner">
+            <a href="/" class="site-branding" aria-label="Ir al inicio">
+                <h1>
+                    <span class="logo-text">Iberisite</span>
+                </h1>
+                <p class="tagline">Diseño Web Profesional & Minimalista</p>
+            </a>
+
+            <!-- Menú de navegación principal - SEO optimized -->
+            <nav id="primary-navigation" class="main-navigation" role="navigation" aria-label="Menú principal">
+                <ul class="primary-menu responsive">
+                    <li><a href="/" rel="home">Inicio</a></li>
+                    <li><a href="/servicios/" rel="dofollow">Servicios</a></li>
+                    <li><a href="/portfolio/" rel="dofollow">Proyectos</a></li>
+                    <li><a href="/blog/" rel="dofollow">Blog</a></li>
+                    <li><a href="/contacto/" rel="dofollow">Contacto</a></li>
+                </ul>
+
+                <!-- Mobile menu toggle button (visible solo en móvil/tablet) -->
+                <button class="menu-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                    <span>☰ Menú</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT - SEMANTIC HTML5 (SEO best practice) -->
+    <main id="main-content" role="main">
+        
+        <!-- Hero Section - Atractiva y minimalista -->
+        <section id="hero" class="hero-section hero-minimal" aria-labelledby="hero-title">
+            <div class="container">
+                <h1 id="hero-title">Diseño Web que Conecta</h1>
+                <p class="hero-subtitle">
+                    Desarrollamos sitios web profesionales, minimalistas y orientados al SEO. 
+                    Expertos en WordPress con diseño adaptativo para todos los dispositivos.
+                </p>
+                
+                <!-- Call-to-action (CTA) - Conversion optimized -->
+                <div class="cta-buttons">
+                    <a href="/contacto/" class="btn btn-primary" rel="nofollow">Solicitar Presupuesto</a>
+                    <a href="/portfolio/" class="btn btn-secondary" rel="dofollow">Ver Proyectos</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Overview - SEO: semantic article tags -->
+        <section id="services" class="services-section" aria-labelledby="services-title">
+            <div class="container">
+                <h2 id="services-title" class="section-title">Nuestros Servicios</h2>
+                
+                <!-- Grid responsive con artículos semánticos (SEO) -->
+                <div class="grid services-grid">
+                    
+                    <article class="service-item" itemscope itemtype="https://schema.org/Service">
+                        <h3 itemprop="name">Diseño Web Personalizado</h3>
+                        <p itemprop="description">Sitios web minimalistas adaptativos diseñados para convertir visitantes en clientes.</p>
+                        <a href="/servicios/diseño-web/" itemprop="url" rel="dofollow">Más información →</a>
+                    </article>
+
+                    <article class="service-item" itemscope itemtype="https://schema.org/Service">
+                        <h3 itemprop="name">Desarrollo WordPress</h3>
+                        <p itemprop="description">Tema WordPress optimizados para SEO con performance ligera y seguridad anti-inyección.</p>
+                        <a href="/servicios/wordpress/" itemprop="url" rel="dofollow">Más información →</a>
+                    </article>
+
+                    <article class="service-item" itemscope itemtype="https://schema.org/Service">
+                        <h3 itemprop="name">SEO & Performance</h3>
+                        <p itemprop="description">Optimización de motores de búsqueda y mejora de velocidad de carga para mejor posición.</p>
+                        <a href="/servicios/seo/" itemprop="url" rel="dofollow">Más información →</a>
+                    </article>
+
+                    <article class="service-item" itemscope itemtype="https://schema.org/Service">
+                        <h3 itemprop="name">Mantenimiento Web</h3>
+                        <p itemprop="description">Actualizaciones de seguridad, backups automáticos y soporte técnico continuo.</p>
+                        <a href="/servicios/mantenimiento/" itemprop="url" rel="dofollow">Más información →</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section - Contenido relevante para búsqueda (SEO) -->
+        <section id="about" class="about-section" aria-labelledby="about-title">
+            <div class="container">
+                <h2 id="about-title" class="section-title">Sobre Nosotros</h2>
+                <p class="about-content">
+                    En Iberisite somos especialistas en desarrollo web full-stack: desde WordPress personalizado 
+                    hasta componentes React/Vue y APIs REST con PHP. Nuestro enfoque es crear experiencias digitales 
+                    que combinan diseño minimalista, orientación al SEO y código seguro contra inyecciones SQL/XSS.
+                </p>
+
+                <!-- Stats para SEO (credibility signals) -->
+                <div class="stats-grid">
+                    <div class="stat-item" itemscope itemtype="https://schema.org/ReviewAggregateRating">
+                        <span itemprop="reviewCount">150+</span> 
+                        <span itemprop="ratingValue">4.9</span>/5 proyectos completados
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER SEMÁNTICO HTML5 (Componente reutilizable) -->
+    <footer id="colophon" role="contentinfo">
+        <div class="container footer__inner">
+            
+            <!-- Footer widgets área para contenido relevante SEO -->
+            <div class="footer-widgets widget-container" itemscope itemtype="https://schema.org/Organization">
+                <h2>Enlaces Rápidos</h2>
+                
+                <nav aria-label="Footer navigation">
+                    <ul>
+                        <li><a href="/servicios/" rel="dofollow">Servicios</a></li>
+                        <li><a href="/portfolio/" rel="dofollow">Portafolio</a></li>
+                        <li><a href="/blog/" rel="dofollow">Blog</a></li>
+                        <li><a href="/contacto/" rel="dofollow">Contacto</a></li>
+                    </ul>
+                </nav>
+
+                <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                    <h3>Contacto</h3>
+                    <address>
+                        <span itemprop="streetAddress">Av. Tecnología 123</span><br>
+                        <span itemprop="addressLocality">Ciudad Digital</span>, 
+                        <span itemprop="addressRegion">CDMX</span> 
+                        <span itemprop="postalCode">06700</span>
+                    </address>
+                </div>
+
+                <!-- Email para SEO: mailto link -->
+                <a href="mailto:info@ibervisite.com" class="email-link" rel="noopener noreferrer">
+                    info@ibervisite.com
+                </a>
+            </div>
+
+            <!-- Footer legal y copyright para SEO -->
+            <div class="footer-legal">
+                
+                <!-- Copyright con año dinámico (SEO best practice) -->
+                <p class="copyright">
+                    &copy; <?php echo esc_attr(date('Y')); ?> Iberisite. Todos los derechos reservados. 
+                    Sitio web optimizado para SEO, diseñado con HTML5 semántico y CSS responsive.
+                </p>
+
+                <!-- Meta tags de attribution para SEO -->
+                <div class="footer-credits">
+                    <a href="/sitemap.xml" rel="sitemap">Mapa del sitio</a> | 
+                    <a href="/robots.txt" rel="noopener noreferrer">Robots</a> | 
+                    <a href="/sitemap-index.xml" rel="nofollow">Sitemap Index</a>
+                </div>
+
+                <!-- Schema.org footer Organization data -->
+                <script type="application/ld+json">
+                {
+                    "@context": "https://schema.org",
+                    "@type": "Organization",
+                    "name": "Iberisite",
+                    "url": "https://ibervisite.com/",
+                    "logo": "https://ibervisite.com/logo.png",
+                    "sameAs": [
+                        "https://www.facebook.com/iberisite",
+                        "https://twitter.com/iberisite_dev",
+                        "https://linkedin.com/company/ibervisite"
+                    ]
+                }
+                </script>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lazy loading analytics (carga diferida para performance ligera) -->
+    <script src="/js/analytics.js" defer></script>
+
+</body>
+</html>
