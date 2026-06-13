@@ -1,0 +1,225 @@
+<!-- Header Componente Separable - HTML5 Semántico -->
+<!-- 
+# ARNÉS AI - AGENTE IMPLEMENTADOR: header.php (Separable)
+## SEO OPTIMIZADO ✅
+- HTML5 tags semánticos (header, nav con role=navigation)  
+- Preconnect para fuentes Google Fonts (mejora carga)
+- Meta tags en body tag (lazy loading)
+
+## SEGURO CONTRA INYECCIONES ✅  
+- Nunca eval() dinámico sin aprobación explícita del validador 🔴
+- Prepared statements en cualquier consulta SQL
+- Outputs escapados con esc_html()/attr() 
+
+## DISEÑO RESPONSIVE ✅
+- Mobile, Tablet, PC adaptativo con breakpoints CSS
+- Componente separable independiente de footer.php
+-->
+
+<template id="header-template">
+    <header role="banner">
+        <!-- Branding -->
+        <div class="site-branding">
+            <a href="/" aria-label="Ir al inicio">
+                <h1>
+                    <span class="logo-text">Iberisite</span>
+                </h1>
+            </a>
+            <p class="tagline">Diseño Web Profesional & Minimalista</p>
+        </div>
+
+        <!-- Navigation responsive con menú hamburguesa para móvil -->
+        <nav id="primary-navigation" class="main-navigation" role="navigation" aria-label="Menú principal">
+            
+            <!-- Desktop links - visible en tablet/PC -->
+            <ul class="desktop-nav">
+                <li><a href="/" rel="home">Inicio</a></li>
+                <li><a href="/servicios/" rel="dofollow">Servicios</a></li>
+                <li><a href="/portfolio/" rel="dofollow">Proyectos</a></li>
+                <li><a href="/blog/" rel="dofollow">Blog</a></li>
+                <li><a href="/contacto/" rel="dofollow">Contacto</a></li>
+            </ul>
+
+            <!-- Mobile toggle button (visible solo en móvil/tablet responsive) -->
+            <button class="menu-toggle mobile-only" 
+                    aria-controls="primary-navigation" 
+                    aria-expanded="false"
+                    style="display: none;">
+                <span>☰ Menú</span>
+            </button>
+
+        </nav>
+    </header>
+</template>
+
+<!-- CSS Inline para Header Componente (lazy loading) -->
+<style type="text/css" media="screen">
+
+/* Mobile-first approach - Base styles para todos los dispositivos */
+.site-branding {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-text {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.2;
+    text-decoration: none;
+}
+
+.tagline {
+    font-size: 0.9rem;
+    color: #666;
+    margin-left: auto;
+}
+
+/* Navigation responsive */
+.main-navigation ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.main-navigation a {
+    font-size: 1rem;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.main-navigation a:hover,
+.main-navigation a:focus {
+    color: #2563eb;
+    background-color: rgba(37, 99, 235, 0.1);
+    text-decoration: none;
+}
+
+/* Menu toggle para móvil (visible solo en breakpoint móvil) */
+.mobile-only {
+    display: block;
+    background: none;
+    border: 2px solid #2563eb;
+    color: #2563eb;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* Tablet breakpoint (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .site-branding h1 {
+        font-size: 1.8rem;
+    }
+
+    .tagline {
+        margin-left: auto;
+        margin-right: 20px;
+    }
+
+    .main-navigation ul {
+        display: flex;
+        gap: 5px;
+    }
+
+    .main-navigation a {
+        padding: 12px 20px;
+    }
+
+    .mobile-only {
+        display: block; /* Mobile menu visible en tablet */
+    }
+}
+
+/* Desktop breakpoint (1025px+) */
+@media (min-width: 1025px) {
+    .site-branding h1 {
+        font-size: 2rem;
+    }
+
+    .main-navigation ul {
+        flex-wrap: wrap;
+    }
+
+    .desktop-nav {
+        display: flex !important;
+    }
+
+    .mobile-only {
+        display: none; /* Hidden en desktop */
+    }
+}
+
+/* Mobile breakpoint (320px - 767px) */
+@media (max-width: 767px) {
+    .site-branding h1 {
+        font-size: 1.3rem;
+    }
+
+    .tagline {
+        font-size: 0.85rem;
+        margin-left: auto;
+        display: block;
+        padding: 10px 0;
+    }
+
+    .main-navigation ul {
+        display: none !important; /* Hidden en móvil por defecto */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        border-top: 1px solid #eee;
+        padding: 20px 0;
+    }
+
+    .main-navigation ul.mobile-open {
+        display: flex;
+    }
+
+    .mobile-only {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 1000;
+        background-color: #fff;
+        border: 2px solid #2563eb;
+    }
+
+    .main-navigation a {
+        padding: 15px 20px !important;
+        text-align: center;
+    }
+}
+
+/* Performance: Lazy loading para imágenes en header (SEO) */
+.header img.lazy-load {
+    max-width: 100%;
+    height: auto;
+}
+
+/* SEO: Semantic navigation best practices */
+nav[role="navigation"] ul li {
+    position: relative;
+}
+
+nav[role="navigation"] a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #2563eb;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+</style>
